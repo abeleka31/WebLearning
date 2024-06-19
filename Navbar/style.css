@@ -1,0 +1,169 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primaryTextColor: #232e35;
+    --secondaryTextColor: #656d72;
+
+    --borderColor: #f1f1f1;
+    --lineColor: #e8e7e7;
+
+    --primaryBackgroundColor: #fff;
+    --secondaryBackgroundColor: #fbfbfb;
+    --thirdBackgrooundColor: #f5f3fe;
+
+    --primaryIconColor: #7e74f1;
+    --primaryIconColorHover: #5d51e8;
+
+    --sectionPadding: 6rem 0;
+    --itemBorderRadius: 0.7rem;
+}
+
+body{
+    min-height: 100vh;
+    background-image: url(pic/gibli.jpg);
+    background-size: cover;        /* Mengatur gambar agar mencakup seluruh area bodi */
+    background-position: center;   /* Menempatkan gambar di tengah */
+    background-repeat: no-repeat;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 28px 12%;
+    transition: all .50s ease;
+    text-decoration: none;
+
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo i{
+    color: wheat;
+    font-size: 28px;
+    margin-right: 3px;
+}
+.logo span{
+    color: var(--secondaryBackgroundColor);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0px 30px;
+    transition: .50s ease;
+    gap: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: auto;
+}
+.navbar a{
+    text-decoration: none;
+    color: #f1f1f1;
+}
+.navbar a:hover{
+    color: #3298d8;
+}
+.navbar a.active{
+    color: #3298d8;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.main a{
+    margin-right: 20px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #3298d8;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all .50s ease;
+}
+.user{
+    display: flex;
+    align-items: center;
+}
+.user i{
+    color: #5d51e8;
+    padding-right: 7px;
+    font-size: 28px;
+}
+.main a:hover{
+    color: #d832b7;
+}
+#menu-icon{
+    font-size: 35px;
+    color: #d832b7;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+@media (max-width: 1280px){
+    header{
+        padding: 14px 2%;
+        transition: .2s;
+    }
+    .navbar a{
+        padding: 5px 0;
+        margin: 0px 20px;
+    }
+}
+@media (max-width: 1090px){
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 50vh;
+        background-color: #5d51e8;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+        gap: 0px;
+    }
+    .navbar a{
+        display: block;
+        margin: 12px 0;
+        padding: 0px 25px;
+        transition: all .50s ease;
+    }
+    .navbar a:hover{
+        color: #d832b7;
+        transform: translateY(5px);
+    }
+    .navbar a.active{
+        color: #d832b7;
+        font-weight: 700;
+        font-size: 1.3rem;
+    }
+    .navbar.open{
+        right: 2%;
+    }
+}
